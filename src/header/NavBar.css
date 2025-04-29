@@ -1,0 +1,43 @@
+/* aquí se importa la fuente comic sans */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
+
+.NavBar{
+    width: 100%;
+    background-color: #72e2ff;
+    box-shadow: 2px 2px 2px 2px;  
+    z-index: 99999999; 
+}
+
+a{
+    display: flex;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: #000;
+    font-family: comic sans ms;
+    
+}
+
+nav{
+    width: 100vw;
+    
+}
+
+ul{
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+        height: 3rem;
+        justify-content: flex-end;
+        padding-right: 1rem;
+    }
+    
+.H2{
+    transition: all .3s ease-in-out;
+    
+}
+
+.H2:hover{
+    color: #ff002b;   
+}
+

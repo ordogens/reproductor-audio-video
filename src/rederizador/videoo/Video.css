@@ -1,0 +1,129 @@
+/* aquí se importa la fuente comic sans */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
+
+.Video{
+    height: 100%;
+    width: 50%;
+    /* background-color: blueviolet; */
+    overflow-y: scroll;
+    font-family:comic sans ms;
+     background-color: rgba(245, 73, 144);
+     
+     .imput{
+        position: relative;
+        left: 5.5rem;
+        width: 25rem;
+        height: 2rem;
+        top: 1rem;
+        outline: none;
+        border-radius: 5px;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.781) 0px 5px 15px,
+            rgb(255, 19, 117) 5px 10px 15px;
+    }     
+}
+
+
+
+.btn{
+    cursor: pointer;
+    position: relative;
+    top: 17px;
+    left: .5rem;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    font-family:comic sans ms;
+     background-color: #72e2ff;
+     transition: all .5s ease-in-out;
+}
+
+.btn:hover{
+    background-color: #ff57b4;
+   
+}
+
+video{
+    width: inherit;
+    height: inherit;
+    background-color: transparent;
+    border-radius: .5rem;
+    box-shadow: 2px 2px 5px 4px;
+    transition: all .5s ease-in-out;
+}
+
+video:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 0px;
+    
+}
+
+h2{
+    margin: 1rem 0 0 0;
+    color: rgba(245, 73, 144);
+    width: 100%;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-align: center;
+    padding:  0 0 .4rem 0;
+    margin-bottom: .2rem;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #000;
+}
+
+.spann{
+    /* display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-left: 1rem;
+    overflow-x: auto; */
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0;
+    grid-gap: 1rem;
+    /* background-color: rgb(29, 29, 29); */
+    background-color: rgba(245, 73, 144);
+    /* background-color: #ff57b4; */
+    
+}
+
+.span1{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 1rem;
+    
+}
+
+.Video::-webkit-scrollbar{
+    width: 7px;
+}
+
+.Video::-webkit-scrollbar-track{
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.Video::-webkit-scrollbar-thumb{
+    background-color: #fc0b33;
+    border-radius: 10px;
+}
+.Video::-webkit-scrollbar-thumb:hover{
+    background-color: #d60326;
+}
+

@@ -1,0 +1,115 @@
+/* aquí se importa la fuente comic sans */
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap");
+
+.Audio {
+  display: flex;
+  height: 200%;
+  width: 50%;
+  background-color: rgba(245, 73, 144);
+  overflow-y: scroll;
+
+  .input2 {
+    position: relative;
+    left: 10rem;
+    width: 25rem;
+    height: 2rem;
+    outline: none;
+    border-radius: 5px;
+    /* padding-left: 1rem; */
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.781) 0px 5px 15px,
+      rgb(255, 19, 117) 5px 10px 15px;
+  }
+
+  .input2::placeholder {
+    padding: 0;
+  }
+
+  .btn2 {
+    cursor: pointer;
+    position: relative;
+    bottom: 2rem;
+    left: 20rem;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    font-family: comic sans ms;
+    background-color: #72e2ff;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.btn2:hover {
+  background-color: #ff57b4;
+}
+
+.aud {
+  margin-top: 1rem;
+  display: flex;
+  width: 50%;
+  height: 200%;
+  /* padding-left: 1rem; */
+}
+
+.Mus {
+  margin: 1rem 0 0 0;
+  color: rgba(245, 73, 144);
+  width: 70%;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-align: center;
+  padding: 0 0 0.4rem 0;
+  margin-bottom: 0.2rem;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #000;
+  font-family: comic sans ms;
+}
+
+.Mu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+.aud2 {
+  margin-top: 3rem;
+  display: flex;
+  width: 50%;
+  height: 200%;
+}
+
+.Mu2 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+audio {
+  width: 18rem;
+}
+
+.Audio::-webkit-scrollbar {
+  width: 7px;
+}
+
+.Audio::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.Audio::-webkit-scrollbar-thumb {
+  background-color: #fc0b33cc;
+  border-radius: 10px;
+}
+.Audio::-webkit-scrollbar-thumb:hover {
+  background-color: #d60326;
+}
