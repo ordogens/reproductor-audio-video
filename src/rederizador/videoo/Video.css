@@ -108,6 +108,7 @@ h2 {
   padding: 2rem 0 5rem 0;
   justify-content: center;
   margin-top: 2rem;
+  /* background-color: red; */
 
   & div {
     min-width: 300px;

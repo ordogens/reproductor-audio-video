@@ -27,6 +27,7 @@ export const Video = () => {
   ];
   // Filtrar la lista de videos usando una expresión regular
   // y el término de búsqueda proporcionado por el usuario
+  //y lo compara tambien con la lista de videos de arriba
   const filterWithRegex = (list, searchTerm) => {
     try {
       const regex = new RegExp(searchTerm, "i");
@@ -43,15 +44,20 @@ export const Video = () => {
       <input
         className="imput"
         type="text"
+        placeholder="🔎 Buscar video..."
         value={search}
         onChange={(e) => {
           const value = e.target.value;
           setSearch(value);
           if (value.trim() === "") {
-            setBoton(""); // Mostrar todos los videos si se borra el input
+            setBoton(""); // Restaurar todos los videos
           }
         }}
-        placeholder="🔎 Buscar video..."
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            setBoton(search);
+          }
+        }}
       />
 
       <button className="btn" onClick={() => setBoton(search)}>

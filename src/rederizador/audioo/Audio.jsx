@@ -1,4 +1,5 @@
 import "./audio.css";
+import { useState } from "react";
 import notions from "../../../public/audio/notions.mp3";
 import artics from "../../../public/audio/artic-monkeys.mp3";
 import amor from "../../../public/audio/amor-de-siempre.mp3";
@@ -16,113 +17,83 @@ import odio from "../../../public/audio/odio-al-ser-humano.mp3";
 import ride from "../../../public/audio/ride.mp3";
 import save from "../../../public/audio/save-your-tears.mp3";
 import buses from "../../../public/audio/no-buses.mp3";
+import so from "../../../public/audio/so-fe.mp3";
 
 export const Audio = () => {
+  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("");
+
+  const audioList = [
+    {
+      name: "musica rara",
+      src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    },
+    { name: "notions", src: notions },
+    { name: "Artic monkeys", src: artics },
+    { name: "amor de siempre", src: amor },
+    { name: "artic monkeys1", src: artics1 },
+    { name: "run aurora", src: aurora },
+    { name: "el camino de tu ombligo", src: camino },
+    { name: "burn to die", src: burn },
+    { name: "505", src: cinco },
+    { name: "lado oscuro", src: oscuro },
+    { name: "Hoy por hoy", src: hoy },
+    { name: "la distancia", src: distancia },
+    { name: "lover day", src: lover },
+    { name: "tengo dias pensando en ti", src: ojos },
+    { name: "odio al ser humano", src: odio },
+    { name: "ride", src: ride },
+    { name: "save your tears", src: save },
+    { name: "no buses", src: buses },
+    { name: "so fe", src: so }
+  ];
+
+  const filterWithRegex = (list, query) => {
+    try {
+      const regex = new RegExp(query, "i");
+      return list.filter((item) => regex.test(item.name));
+    } catch {
+      return [];
+    }
+  };
+
+  const filteredAudios =
+    query.trim() === "" ? audioList : filterWithRegex(audioList, query);
+
   return (
     <div className="Audio">
-      <input className="input2" type="text" placeholder="🔎" />
-      <button className="btn2">Search</button>
-      <div className="aud">
-        <h3 className="Mus">musica rara</h3>
-        <audio controls>
-          <source
-            src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-            type="audio/mpeg"
-          />
-          Your browser does not support the audio tag.
-        </audio>
+      <input
+        className="input2"
+        type="text"
+        placeholder="🔎 Buscar audio..."
+        value={search}
+        onChange={(e) => {
+          const value = e.target.value;
+          setSearch(value);
+          if (value.trim() === "") {
+            setQuery(""); // Restaurar todos los audios
+          }
+        }}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            setQuery(search);
+          }
+        }}
+      />
+      <button className="btn2" onClick={() => setQuery(search)}>
+        Search
+      </button>
 
-        <h3 className="Mus">notions</h3>
-        <audio controls>
-          <source src={notions} type="audio/mpeg" />
-          Your browser does not support the audio tag.
-        </audio>
-
-        <h3 className="Mus">Artic monkeys</h3>
-        <audio controls>
-          <source src={artics} type="audio/mpeg" />
-          Your browser does not support the audio tag.
-        </audio>
-        <h3 className="Mus">amor de siempre</h3>
-        <audio controls>
-          <source src={amor} type="audio/mpeg" />
-          Your browser does not support the audio tag.
-        </audio>
-        <h3 className="Mus">artic monkeys1</h3>
-        <audio controls>
-          <source src={artics1} type="audio/mpeg" />
-          Your browser does not support the audio tag.
-        </audio>
-        <h3 className="Mus">run aurora</h3>
-        <audio controls>
-          <source src={aurora} type="audio/mpeg" />
-          Your browser does not support the audio tag.
-        </audio>
-        <h3 className="Mus">el camino de tu ombligo</h3>
-        <audio controls>
-          <source src={camino} type="audio/mpeg" />
-          Your browser does not support the audio tag.
-        </audio>
-        <h3 className="Mus">burn to die</h3>
-        <audio controls>
-          <source src={burn} type="audio/mpeg" />
-          Your browser does not support the audio tag.
-        </audio>
-        <h3 className="Mus">no buses</h3>
-        <audio controls>
-          <source src={buses} type="audio/mpeg" />
-          Your browser does not support the audio tag.
-        </audio>
-      </div>
-
-      <div className="aud2">
-        <div className="Mu2">
-          <h3 className="Mus">505</h3>
-          <audio controls>
-            <source src={cinco} type="audio/mpeg" />
-            Your browser does not support the audio tag.
-          </audio>
-          <h3 className="Mus">lado oscuro</h3>
-          <audio controls>
-            <source src={oscuro} type="audio/mpeg" />
-            Your browser does not support the audio tag.
-          </audio>
-          <h3 className="Mus">Hoy por hoy</h3>
-          <audio controls>
-            <source src={hoy} type="audio/mpeg" />
-            Your browser does not support the audio tag.
-          </audio>
-          <h3 className="Mus">la distancia</h3>
-          <audio controls>
-            <source src={distancia} type="audio/mpeg" />
-            Your browser does not support the audio tag.
-          </audio>
-          <h3 className="Mus">lover day</h3>
-          <audio controls>
-            <source src={lover} type="audio/mpeg" />
-            Your browser does not support the audio tag.
-          </audio>
-          <h3 className="Mus">tengo dias pensando en ti</h3>
-          <audio controls>
-            <source src={ojos} type="audio/mpeg" />
-            Your browser does not support the audio tag.
-          </audio>
-          <h3 className="Mus">odio al ser humano</h3>
-          <audio controls>
-            <source src={odio} type="audio/mpeg" />
-            Your browser does not support the audio tag.
-          </audio>
-          <h3 className="Mus">ride</h3>
-          <audio controls>
-            <source src={ride} type="audio/mpeg" />
-            Your browser does not support the audio tag.
-          </audio>
-          <h3 className="Mus">save your tears</h3>
-          <audio controls>
-            <source src={save} type="audio/mpeg" />
-            Your browser does not support the audio tag.
-          </audio>
-        </div>
+      <div className="audio">
+        {filteredAudios.map((audio, index) => (
+          <div key={index}>
+            <h3 className="Mus">{audio.name}</h3>
+            <audio controls>
+              <source src={audio.src} type="audio/mpeg" />
+              Tu navegador no soporta la etiqueta de audio.
+            </audio>
+          </div>
+        ))}
       </div>
     </div>
   );
